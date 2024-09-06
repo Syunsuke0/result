@@ -9,4 +9,15 @@ router.get("/", async (req, res) => {
   res.json(results);
 });
 
+router.delete("/:id", async (req, res) => {
+  const _id = req.params.id;
+  await Result.deleteOne({ _id });
+  res.json({ msg: "Delete succeed." });
+});
+
+router.post("/", async (req, res) => {
+  const result = new Result(req.body);
+  const newResult = await result.save();
+  res.json(newResult);
+});
 export default router;

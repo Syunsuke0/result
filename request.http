@@ -1,1 +1,11 @@
 http://localhost:8080/api/results
+
+### 
+POST http://localhost:8080/api/results
+Content-Type: application/json
+
+{
+    "match_result":"win",
+    "character_used":"女王",
+    "map":"月の河公園"
+}
