@@ -2,8 +2,8 @@
 import { useState } from "react";
 
 const Form = () => {
-  const [usedCharacter, setUsedCharacter] = useState();
-  const [usedMap, setUsedMap] = useState();
+  const [usedCharacter, setUsedCharacter] = useState("");
+  const [usedMap, setUsedMap] = useState("");
   const [result, setResult] = useState();
   const radioButtons = [
     {
@@ -35,6 +35,7 @@ const Form = () => {
       <label>
         Pick a used Character :
         <select value={usedCharacter} onChange={selectCharacter}>
+          <option value="">キャラを選択</option>
           <option value="女王">女王</option>
           <option value="破輪">破輪</option>
           <option value="魔女">魔女</option>
@@ -45,6 +46,7 @@ const Form = () => {
       <label>
         Pick a used Map :
         <select value={usedMap} onChange={selectMap} name="selectMap">
+          <option value="">マップを選択</option>
           <option value="軍需工場">軍需工場</option>
           <option value="赤の教会">赤の教会</option>
           <option value="聖心病院">聖心病院</option>
