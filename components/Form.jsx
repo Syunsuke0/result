@@ -1,4 +1,3 @@
-// import CharaPicker from "./CharaPicker";
 import { useState } from "react";
 
 const Form = () => {
@@ -29,8 +28,33 @@ const Form = () => {
     setResult(e.target.value);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      usedCharacter,
+      usedMap,
+      result,
+    };
+
+    try {
+      const response = await fetch("http://localhost:8080/api/results", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+    } catch {}
+  };
+
   return (
-    <form method="post" action="/hoge" className="bg-slate-400">
+    <form
+      onSubmit={handleSubmit}
+      method="post"
+      action="localhost:8080/api/results"
+      className="bg-slate-400"
+    >
       <h2>使用キャラ</h2>
       <label>
         Pick a used Character :
