@@ -1,0 +1,72 @@
+[
+  {
+    "usedCharacter": "女王",
+    "usedMap": "赤の教会",
+    "result": "win",
+    "createdAt": "2024-10-12T12:00:00.000Z",
+    "updatedAt": "2024-10-12T12:00:00.000Z"
+  },
+  {
+    "usedCharacter": "破輪",
+    "usedMap": "軍需工場",
+    "result": "lose",
+    "createdAt": "2024-10-11T15:30:00.000Z",
+    "updatedAt": "2024-10-11T15:30:00.000Z"
+  },
+  {
+    "usedCharacter": "魔女",
+    "usedMap": "中華街",
+    "result": "draw",
+    "createdAt": "2024-10-10T08:45:00.000Z",
+    "updatedAt": "2024-10-10T08:45:00.000Z"
+  },
+  {
+    "usedCharacter": "ガラテア",
+    "usedMap": "湖景村",
+    "result": "win",
+    "createdAt": "2024-10-09T17:20:00.000Z",
+    "updatedAt": "2024-10-09T17:20:00.000Z"
+  },
+  {
+    "usedCharacter": "女王",
+    "usedMap": "永眠町",
+    "result": "lose",
+    "createdAt": "2024-10-08T21:10:00.000Z",
+    "updatedAt": "2024-10-08T21:10:00.000Z"
+  },
+  {
+    "usedCharacter": "破輪",
+    "usedMap": "月の河公園",
+    "result": "draw",
+    "createdAt": "2024-10-07T11:55:00.000Z",
+    "updatedAt": "2024-10-07T11:55:00.000Z"
+  },
+  {
+    "usedCharacter": "魔女",
+    "usedMap": "聖心病院",
+    "result": "win",
+    "createdAt": "2024-10-06T14:40:00.000Z",
+    "updatedAt": "2024-10-06T14:40:00.000Z"
+  },
+  {
+    "usedCharacter": "ガラテア",
+    "usedMap": "レオの思い出",
+    "result": "lose",
+    "createdAt": "2024-10-05T19:15:00.000Z",
+    "updatedAt": "2024-10-05T19:15:00.000Z"
+  },
+  {
+    "usedCharacter": "女王",
+    "usedMap": "湖景村",
+    "result": "win",
+    "createdAt": "2024-10-04T16:30:00.000Z",
+    "updatedAt": "2024-10-04T16:30:00.000Z"
+  },
+  {
+    "usedCharacter": "破輪",
+    "usedMap": "赤の教会",
+    "result": "draw",
+    "createdAt": "2024-10-03T10:20:00.000Z",
+    "updatedAt": "2024-10-03T10:20:00.000Z"
+  }
+]
