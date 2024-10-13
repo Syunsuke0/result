@@ -1,13 +1,13 @@
-const express = require("express");
+import express from "express";
 const app = express();
-const apiRoutes = require("./server/api-routes");
-const { connect, Schema, model } = require("mongoose");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+import apiRoutes from "./api-routes/index.mjs";
+import { connect, Schema, model } from "mongoose";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
 const port = process.env.PORT || 8080;
-const cors = require("cors");
+import cors from "cors";
 
-const env = require("dotenv");
+import env from "dotenv";
 env.config();
 
 //API

@@ -1,5 +1,5 @@
-const express = require("express");
-const resultsRouter = require("./results.js");
+import express from "express";
+import resultsRouter from "./results.mjs";
 
 const router = express.Router();
 router.use("/results", resultsRouter);
