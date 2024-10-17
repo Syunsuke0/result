@@ -53,9 +53,9 @@ const Form = () => {
       onSubmit={handleSubmit}
       method="post"
       action="localhost:8080/api/results"
-      className="bg-slate-400"
+      className="bg-slate-400 p-8 rounded-3xl"
     >
-      <h2>使用キャラ</h2>
+      <h2 className="text-lg">使用キャラ</h2>
       <label>
         Pick a used Character :
         <select value={usedCharacter} onChange={selectCharacter}>
@@ -66,7 +66,7 @@ const Form = () => {
         </select>
       </label>
 
-      <h2>マップ</h2>
+      <h2 className="text-lg">マップ</h2>
       <label>
         Pick a used Map :
         <select value={usedMap} onChange={selectMap} name="selectMap">
@@ -82,11 +82,11 @@ const Form = () => {
         </select>
       </label>
 
-      <h3>勝敗</h3>
+      <h3 className="text-lg">勝敗</h3>
       <div>
         {radioButtons.map((radio) => {
           return (
-            <label>
+            <label key={radio.value}>
               <input
                 type="radio"
                 value={radio.value}
@@ -99,11 +99,11 @@ const Form = () => {
         })}
       </div>
 
-      <div className="mx-2">
-        <button type="reset" className="outline">
+      <div className="mx-2 flex ">
+        <button type="reset" className="outline rounded-md">
           リセット
         </button>
-        <button type="submit" className="outline">
+        <button type="submit" className="mx-4 outline rounded-md">
           戦績を追加する
         </button>
       </div>
