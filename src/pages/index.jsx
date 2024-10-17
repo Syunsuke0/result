@@ -1,9 +1,6 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import CharaPicker from "../../components/CharaPicker";
-import MapPicker from "../../components/MapPicker";
-import ResultPicker from "../../components/ResultPicker";
-import Form from "../../components/Form";
+import Form from "../components/Form";
+import ResultList from "../components/ResultList";
 
 const inter = Inter({ subsets: ["latin"] });
 const test_results = [
@@ -13,11 +10,12 @@ const test_results = [
 const Home = () => {
   return (
     <div>
-      <div className="text-4xl text-center my-11">ランクマ戦績</div>
+      <h1 className="text-3xl text-center font-semibold">ランクマ戦績</h1>
       <div>
-        <h2 className="text-center text-2xl bg-slate-400 ">戦績の追加</h2>
+        <h2 className="flex justify-center">戦績の追加</h2>
+        <Form />
       </div>
-      <Form />
+      <ResultList />
     </div>
   );
 };
