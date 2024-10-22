@@ -4,22 +4,20 @@ import Form from "../components/Form";
 import ResultList from "../components/ResultList";
 
 const inter = Inter({ subsets: ["latin"] });
-const test_results = [
-  { match_result: "win", character_used: "女王", map: "軍需工場" },
-];
 
 const Home = ({ data }) => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getResults = async () => {
       const response = await fetch("http://localhost:8080/api/results");
       const data = await response.json();
       setResults(data);
     };
 
-    fetchData();
+    getResults();
   }, []);
+
   return (
     <div>
       <h1 className="text-3xl text-center font-semibold">ランクマ戦績</h1>
@@ -27,7 +25,25 @@ const Home = ({ data }) => {
         <h2 className="flex justify-center">戦績の追加</h2>
         <Form />
       </div>
-      <ResultList data={results} />
+      <div className="">
+        <h3 className="text-center">戦績一覧</h3>
+        <div className="flex justify-around">
+          <div className="bg-gray-200 p-2">試合結果</div>
+          <div className="bg-gray-200 p-2">使用キャラ</div>
+          <div className="bg-gray-200 p-2">使用マップ</div>
+        </div>
+        {results.length > 0
+          ? results.map((result, index) => {
+              return (
+                <div className="flex justify-around" key={results.index}>
+                  <p>{result.result}</p>
+                  <p>{result.usedCharacter}</p>
+                  <p>{result.usedMap}</p>
+                </div>
+              );
+            })
+          : null}
+      </div>
     </div>
   );
 };
