@@ -7,15 +7,24 @@ const inter = Inter({ subsets: ["latin"] });
 
 const Home = ({ data }) => {
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getResults = async () => {
-      const response = await fetch("http://localhost:8080/api/results");
-      const data = await response.json();
-      setResults(data);
+      try {
+        const res = await fetch("http://localhost:8080/api/resultss");
+        if (!res.ok) {
+          throw new Error("エラーが発生したため、データの取得に失敗しました。");
+        }
+        const data = await response.json();
+        setResults(data);
+      } catch (error) {
+        setError(error);
+      }
     };
-
     getResults();
+    setLoading(false);
   }, []);
 
   return (
@@ -32,17 +41,23 @@ const Home = ({ data }) => {
           <div className="bg-gray-200 p-2">使用キャラ</div>
           <div className="bg-gray-200 p-2">使用マップ</div>
         </div>
-        {results.length > 0
-          ? results.map((result, index) => {
-              return (
-                <div className="flex justify-around" key={results.index}>
-                  <p>{result.result}</p>
-                  <p>{result.usedCharacter}</p>
-                  <p>{result.usedMap}</p>
-                </div>
-              );
-            })
-          : null}
+        {loading ? (
+          <div>ローディング中</div>
+        ) : error ? (
+          <div>{error.message}</div>
+        ) : results.length > 0 ? (
+          results.map((result, index) => {
+            return (
+              <div className="flex justify-around" key={results.index}>
+                <p>{result.result}</p>
+                <p>{result.usedCharacter}</p>
+                <p>{result.usedMap}</p>
+              </div>
+            );
+          })
+        ) : (
+          <div>データがありません</div>
+        )}
       </div>
     </div>
   );
