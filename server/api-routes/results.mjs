@@ -9,4 +9,10 @@ router.get("/", async (req, res) => {
   res.json(results);
 });
 
+router.post("/", async (req, res) => {
+  const result = new Result(req.body);
+  const newResult = await result.save();
+  res.json(newResult);
+});
+
 export default router;
