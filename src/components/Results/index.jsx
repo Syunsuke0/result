@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 
 export const Results = ({ data }) => {
@@ -31,7 +32,13 @@ export const Results = ({ data }) => {
       ) : results.length > 0 ? (
         results.map((result, index) => {
           return (
-            <div className="flex justify-around" key={results.index}>
+            <div
+              className={`flex justify-around ${
+                index % 2 === 0 ? "bg-gray-200" : "bg-white"
+              }`}
+              key={results._id}
+            >
+              <p>{dayjs(result.createdAt).format("YYYY/MM/DD")}</p>
               <p>{result.result}</p>
               <p>{result.usedCharacter}</p>
               <p>{result.usedMap}</p>
