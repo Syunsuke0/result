@@ -33,15 +33,17 @@ export const Results = ({ data }) => {
         results.map((result, index) => {
           return (
             <div
-              className={`flex justify-around ${
+              className={`flex justify-around items-center   ${
                 index % 2 === 0 ? "bg-gray-200" : "bg-white"
-              }`}
-              key={results._id}
+              } p-2`}
+              key={result._id}
             >
-              <p>{dayjs(result.createdAt).format("YYYY/MM/DD")}</p>
-              <p>{result.result}</p>
-              <p>{result.usedCharacter}</p>
-              <p>{result.usedMap}</p>
+              <p className="w-1/4 text-center pr-8">
+                {dayjs(result.createdAt).format("YYYY/MM/DD")}
+              </p>
+              <p className="w-1/4  text-center pr-14">{result.result}</p>
+              <p className="w-1/4  text-center pr-9 ">{result.usedCharacter}</p>
+              <p className="w-1/4 text-center">{result.usedMap}</p>
             </div>
           );
         })
